@@ -1,5 +1,5 @@
 // Cambia la versione quando aggiorni i file, così i telefoni scaricano la nuova copia.
-const VERSION = "impostore-v4";
+const VERSION = "impostore-v5";
 const FILES = [
   "./",
   "index.html",

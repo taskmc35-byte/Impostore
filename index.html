@@ -166,6 +166,8 @@ details.how ol { padding-left: 1.2em; margin: 8px 0 0; }
 #intro .wordmark { font-family: var(--display); font-size: clamp(2.6rem, 13vw, 4rem); line-height: 1; letter-spacing: .02em; white-space: nowrap; display: flex; }
 #intro .wordmark span { display: inline-block; opacity: 0; transform: translateY(.5em) scale(.6); animation: introLetter .38s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: calc(1.45s + var(--i) * 55ms); }
 #intro .wordmark .s { color: var(--signal); }
+#intro .powered { margin-top: 6px; color: var(--dust); font-size: .72rem; font-weight: 500; letter-spacing: .08em; opacity: 0; animation: introFade .5s 2.3s ease forwards; }
+#intro .powered b { color: var(--chalk); font-weight: 700; letter-spacing: .04em; }
 #intro .tag { color: var(--dust); font-weight: 700; font-size: .78rem; letter-spacing: .3em; text-transform: uppercase; opacity: 0; animation: introFade .5s 2.05s ease forwards; }
 #intro.out { animation: introOut .45s ease forwards; pointer-events: none; }
 @keyframes introGlow { to { transform: scale(1); } }
@@ -176,7 +178,7 @@ details.how ol { padding-left: 1.2em; margin: 8px 0 0; }
 @keyframes introFade { to { opacity: 1; } }
 @keyframes introOut { to { opacity: 0; transform: scale(1.08); } }
 @media (prefers-reduced-motion: reduce) {
-  #intro .glow, #intro .hog, #intro .shades, #intro .glint, #intro .wordmark span, #intro .tag { animation: none; transform: none; opacity: 1; }
+  #intro .glow, #intro .hog, #intro .shades, #intro .glint, #intro .wordmark span, #intro .tag, #intro .powered { animation: none; transform: none; opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) { .pop { animation: none; } * { transition: none !important; } }
@@ -284,6 +286,7 @@ details.how ol { padding-left: 1.2em; margin: 8px 0 0; }
     </svg>
     <div class="wordmark" aria-hidden="true"><span style="--i:0">I</span><span style="--i:1">m</span><span style="--i:2">p</span><span style="--i:3">o</span><span class="s" style="--i:4">s</span><span style="--i:5">t</span><span style="--i:6">o</span><span style="--i:7">r</span><span style="--i:8">e</span></div>
     <div class="tag">Chi sta bluffando?</div>
+    <div class="powered">powered by <b>Nova Project Agency</b></div>
   </div>
 </div>
 <div class="app" id="app"></div>
@@ -1121,7 +1124,7 @@ render();
     setTimeout(() => intro.remove(), 460);
   };
   intro.addEventListener("click", close);
-  setTimeout(close, reduced ? 1200 : 2900);
+  setTimeout(close, reduced ? 1400 : 3400);
 })();
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });

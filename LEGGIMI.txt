@@ -66,6 +66,6 @@ manda il file (WhatsApp, Telegram, Drive...), aprilo e consenti
 AGGIORNARE IL GIOCO
 -------------------
 1. Su GitHub carica i file modificati (stesso metodo del punto 3).
-2. Apri sw.js e cambia la riga  const VERSION = "impostore-v3";
-   in "impostore-v4" (poi v5, v6...): così i telefoni scaricano la nuova versione.
+2. Apri sw.js e cambia la riga  const VERSION = "impostore-v4";
+   in "impostore-v5" (poi v6, v7...): così i telefoni scaricano la nuova versione.
 L'app Android e quella su iPhone si aggiornano da sole: non serve rifare l'APK.

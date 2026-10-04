@@ -1,0 +1,71 @@
+IMPOSTORE - Come pubblicarla gratis e creare l'app Android
+==========================================================
+
+Contenuto della cartella
+- index.html            il gioco
+- manifest.webmanifest  nome, colori e icone dell'app
+- sw.js                 permette di giocare anche senza internet
+- fonts/                caratteri tipografici (nessun collegamento esterno)
+- icons/                icone del facocero in tutte le misure
+- .nojekyll             file vuoto, serve a GitHub Pages: non cancellarlo
+
+
+PARTE 1 - Metterla online gratis con GitHub Pages (dal PC, circa 10 minuti)
+---------------------------------------------------------------------------
+1. Vai su https://github.com e crea un account gratuito.
+   Il nome utente diventa parte dell'indirizzo, es. "novaproject".
+
+2. In alto a destra: "+" > "New repository".
+   - Repository name: scrivi ESATTAMENTE  tuonomeutente.github.io
+     (es. novaproject.github.io). Questo nome serve per l'app Android.
+   - Lascia "Public" e premi "Create repository".
+
+3. Nella pagina del repository clicca "uploading an existing file".
+   Apri la cartella "impostore-app" sul PC, seleziona TUTTO il contenuto
+   (Ctrl+A, comprese le cartelle fonts e icons) e trascinalo nella pagina.
+   Se .nojekyll non è visibile in Esplora file: Visualizza > Mostra > Elementi nascosti.
+   Premi "Commit changes".
+
+4. Vai in "Settings" > "Pages" (menu a sinistra).
+   - Source: "Deploy from a branch"
+   - Branch: "main", cartella "/ (root)" > "Save".
+
+5. Dopo 1-2 minuti il gioco è online a:  https://tuonomeutente.github.io
+   Questo è il link da mandare agli amici.
+
+Su iPhone: apri il link in Safari > Condividi > "Aggiungi alla schermata Home".
+Su Android (Chrome): menu ⋮ > "Installa app" / "Aggiungi a schermata Home".
+L'app si apre a schermo intero e funziona anche offline dopo la prima apertura.
+
+
+PARTE 2 - Creare il file APK per Android (gratis, dal PC)
+--------------------------------------------------------
+1. Vai su https://www.pwabuilder.com
+2. Incolla il tuo indirizzo (https://tuonomeutente.github.io) e premi "Start".
+3. Premi "Package For Stores" (o "Generate Package") e scegli "Android".
+4. Nelle opzioni scegli "Other Android" (APK da installare senza Play Store).
+   Package ID: es. io.github.tuonomeutente.impostore
+   App name: Impostore
+5. Scarica lo zip. Dentro trovi:
+   - il file .apk  > è l'app da mandare agli amici
+   - un file "signing.keystore" e "signing-key-info.txt" > CONSERVALI:
+     senza questi non potrai pubblicare aggiornamenti dell'app
+   - un file "assetlinks.json" > serve al punto 6
+
+6. Togliere la barra dell'indirizzo dall'app Android:
+   su GitHub, nel tuo repository: "Add file" > "Create new file".
+   Come nome scrivi:  .well-known/assetlinks.json
+   Incolla il contenuto del file assetlinks.json scaricato e premi "Commit changes".
+   Dopo qualche minuto l'app Android si apre senza barra in alto.
+
+Installare l'APK su un telefono Android:
+manda il file (WhatsApp, Telegram, Drive...), aprilo e consenti
+"Installa app sconosciute" quando il telefono lo chiede.
+
+
+AGGIORNARE IL GIOCO
+-------------------
+1. Su GitHub carica i file modificati (stesso metodo del punto 3).
+2. Apri sw.js e cambia la riga  const VERSION = "impostore-v3";
+   in "impostore-v4" (poi v5, v6...): così i telefoni scaricano la nuova versione.
+L'app Android e quella su iPhone si aggiornano da sole: non serve rifare l'APK.
